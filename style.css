@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Readex Pro, sans-serif;
+}
+
+body {
+    display: flex;
+    padding: 0 35px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(36, 13, 28);
+}
+
+.wrapper .carousel {
+    font-size: 0px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+
+.wrapper {
+    position: relative;
+    max-width: 1200px;
+}
+
+.wrapper i {
+    top: 50%;
+    background-color: white;
+    height: 46px;
+    width: 46px;
+    position: absolute;
+    text-align: center;
+    line-height: 46px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transform: translateY(-50%); /*Put thing into align center itself*/
+}
+
+.wrapper i:first-child {
+ left: -23px;   
+ display: none;
+}
+.wrapper i:last-child {
+    right: -23px;
+}
+
+.carousel img {
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.226);
+    height: 340px;
+    object-fit: cover;
+    margin-left: 14px;
+    width: calc(100% / 3);
+}
+
+
+.carousel img:first-child {
+    margin-left: 0px;
+}
+
+@media screen and (max-width: 900px) {
+    .carousel img {
+        width: calc(100% / 2);
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .carousel img {
+        width: calc(100%);
+    }
+}
+
+.carousel.dragging {
+    scroll-behavior: auto;
+    cursor: grab;
+}
+.carousel.dragging img {
+    pointer-events: none;
+}
